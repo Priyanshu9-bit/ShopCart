@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Pooja Samagri | शुद्ध, सात्विक एवं पावन पूजा सामग्री</title>
+    <meta name="description" content="Panda Pooja Samagri - Authentic, pure and blessed devotional pooja items, incense, brass idols, havan kits and sacred essentials directly from our shop.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20100%22><text y=%22.9em%22 font-size=%2290%22>🪔</text></svg>">
+</head>
+<body>
+
+    <!-- App Switcher Top Banner -->
+    <div class="app-switch-banner">
+        <div class="banner-left">
+            <span class="live-indicator-dot"></span>
+            <span><strong>Customer Storefront</strong> &bull; Only Showing Items Posted by Vendor</span>
+        </div>
+        <div class="nav-switch-btns">
+            <a href="index.html" class="nav-switch-btn active" id="btn-customer-tab">🛍️ Storefront</a>
+            <a href="vendor.html" target="_blank" class="nav-switch-btn" id="btn-vendor-portal">🏪 Vendor Admin Portal ↗</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="header-main">
+        <div class="header-container">
+            <a href="index.html" class="brand-wrapper">
+                <div class="brand-logo-badge">🪔</div>
+                <div class="brand-titles">
+                    <h1>Panda Pooja Samagri</h1>
+                    <span class="tagline">शुद्ध, सात्विक एवं पावन सामग्री</span>
+                </div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-box-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="store-search-input" placeholder="Search pooja items, incense, havan samagri, brass murti...">
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <button class="cart-toggle-btn" id="btn-open-cart">
+                    <span>🛒 Sacred Cart</span>
+                    <span class="cart-counter" id="header-cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-sacred">
+        <div class="hero-content-wrap">
+            <div>
+                <div class="hero-badge-pill">
+                    <span>🕉️ 100% Pure & Vedic Standard</span>
+                </div>
+                <h2 class="hero-title">
+                    Sacred Pooja Items for <span>Divine Blessings</span>
+                </h2>
+                <p class="hero-desc">
+                    Every ritual deserves purity. Browse our collection of pure camphor, authentic havan samagri, handcrafted brass diyas, and temple incense directly from our local shop.
+                </p>
+                <div class="hero-trust-chips">
+                    <div class="trust-chip">🌿 100% Pure Ingredients</div>
+                    <div class="trust-chip">🪔 Direct from Panda Shop</div>
+                    <div class="trust-chip">⚡ Fast Local Delivery</div>
+                    <div class="trust-chip">📱 WhatsApp Assistance</div>
+                </div>
+            </div>
+
+            <!-- Hero Image Box -->
+            <div class="hero-image-box">
+                <img src="assets/hero_banner.jpg" alt="Panda Pooja Samagri Sacred Altar" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter Bar -->
+    <div class="filter-bar-wrap">
+        <div class="category-chips" id="category-filter-chips">
+            <button class="cat-btn active" data-category="ALL">All Items</button>
+            <button class="cat-btn" data-category="Dhoop & Incense">Dhoop & Incense</button>
+            <button class="cat-btn" data-category="Brass & Idols">Brass & Murti</button>
+            <button class="cat-btn" data-category="Pooja Kits & Havan">Pooja Kits & Havan</button>
+            <button class="cat-btn" data-category="Diyas & Pure Ghee">Diyas & Ghee</button>
+            <button class="cat-btn" data-category="Sacred Waters & Chandan">Waters & Chandan</button>
+            <button class="cat-btn" data-category="Puja Essentials">Puja Essentials</button>
+        </div>
+        <div class="item-count-label" id="store-item-count">
+            Showing 0 Items
+        </div>
+    </div>
+
+    <!-- Products Container -->
+    <main class="products-container">
+        <!-- Products Grid -->
+        <div class="products-grid" id="store-products-grid">
+            <!-- Dynamic products will be rendered here -->
+        </div>
+
+        <!-- Empty State (Shown when vendor has not posted any items yet) -->
+        <div class="empty-state-box" id="store-empty-state" style="display: none;">
+            <div class="empty-icon">🪔</div>
+            <h3>No Items Listed Yet</h3>
+            <p>
+                The shopkeeper has not published any items in the store yet.<br>
+                Open the <strong>Vendor Portal</strong> to upload photos, prices, and details of your shop's items.
+            </p>
+            <a href="vendor.html" target="_blank" class="btn-cta-vendor">
+                🏪 Open Vendor Portal to Add Items
+            </a>
+        </div>
+    </main>
+
+    <!-- Slide-Out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+        <aside class="cart-drawer" id="cart-drawer">
+            <div class="cart-drawer-header">
+                <h3>🛒 Your Sacred Cart (<span id="drawer-items-count">0</span>)</h3>
+                <button class="btn-close-drawer" id="btn-close-cart">✕</button>
+            </div>
+
+            <div class="cart-drawer-items" id="cart-items-container">
+                <!-- Cart items rendered here -->
+            </div>
+
+            <div class="cart-drawer-footer" id="cart-footer-section">
+                <!-- Promo Code -->
+                <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+                    <input type="text" id="coupon-input" class="form-control" placeholder="Promo code (Try SHUBH10)" style="padding: 8px 12px; font-size: 0.85rem;">
+                    <button class="v-action-btn" id="btn-apply-coupon" style="padding: 8px 14px; font-weight: 700;">Apply</button>
+                </div>
+                <div id="coupon-applied-msg" style="font-size: 0.8rem; color: #1b8a5a; font-weight: 700; margin-bottom: 10px; display: none;"></div>
+
+                <!-- Bill breakdown -->
+                <div class="bill-row">
+                    <span>Items Subtotal</span>
+                    <span id="bill-subtotal">₹0</span>
+                </div>
+                <div class="bill-row" id="row-discount" style="display: none; color: #1b8a5a;">
+                    <span>Blessing Discount</span>
+                    <span id="bill-discount">-₹0</span>
+                </div>
+                <div class="bill-row">
+                    <span>Sacred Packaging</span>
+                    <span style="color: #1b8a5a; font-weight: 700;">FREE</span>
+                </div>
+                <div class="bill-row">
+                    <span>Delivery</span>
+                    <span id="bill-delivery">FREE</span>
+                </div>
+                <div class="bill-row total-row">
+                    <span>Grand Total</span>
+                    <span id="bill-grand-total" style="color: var(--primary);">₹0</span>
+                </div>
+
+                <button class="btn-checkout-now" id="btn-proceed-checkout">
+                    ✨ Proceed to Checkout
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Quick View Product Modal -->
+    <div class="modal-overlay" id="quickview-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="qv-title">Item Details</h3>
+                <button class="btn-close-drawer" id="btn-close-qv">✕</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; align-items: start;">
+                    <div style="border-radius: var(--radius-md); overflow: hidden; background: #fbf5ef; max-height: 240px; display: flex; align-items: center; justify-content: center;">
+                        <img id="qv-img" src="" alt="Item" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div id="qv-no-img" style="font-size: 3.5rem; display: none;">🪔</div>
+                    </div>
+                    <div>
+                        <div id="qv-category" class="product-category-tag">CATEGORY</div>
+                        <h2 id="qv-name" style="font-size: 1.3rem; margin-bottom: 8px;">Product Name</h2>
+                        <div class="price-row">
+                            <span id="qv-price" class="current-price">₹0</span>
+                            <span id="qv-mrp" class="original-price">₹0</span>
+                            <span id="qv-discount" class="save-percent"></span>
+                        </div>
+                        <div style="margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted);">
+                            <strong>Unit:</strong> <span id="qv-unit">1 Unit</span> &bull; 
+                            <strong>Stock:</strong> <span id="qv-stock" style="color: #1b8a5a; font-weight: 700;">In Stock</span>
+                        </div>
+                        <p id="qv-desc" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px;">
+                            Description...
+                        </p>
+                        <button class="btn-checkout-now" id="qv-btn-add">
+                            🛒 Add to Sacred Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>🪔 Complete Your Sacred Order</h3>
+                <button class="btn-close-drawer" id="btn-close-checkout">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="checkout-form">
+                    <h4 style="font-size: 0.95rem; margin-bottom: 12px; color: var(--text-muted); text-transform: uppercase;">
+                        1. Delivery Details
+                    </h4>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="cust-name">Full Name *</label>
+                            <input type="text" id="cust-name" class="form-control" placeholder="e.g. Ramesh Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cust-phone">WhatsApp / Phone Number *</label>
+                            <input type="tel" id="cust-phone" class="form-control" placeholder="e.g. 9876543210" pattern="[0-9]{10}" title="Please enter a 10-digit mobile number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="cust-street">Delivery Address (House/Street) *</label>
+                        <input type="text" id="cust-street" class="form-control" placeholder="House No, Landmark, Street" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="cust-city">City / Town *</label>
+                            <input type="text" id="cust-city" class="form-control" placeholder="e.g. Varanasi / Delhi" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cust-pincode">Pincode *</label>
+                            <input type="text" id="cust-pincode" class="form-control" placeholder="e.g. 221001" pattern="[0-9]{6}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="cust-notes">Special Puja Instructions (Optional)</label>
+                        <input type="text" id="cust-notes" class="form-control" placeholder="e.g. Deliver before morning aarti / Handle with care">
+                    </div>
+
+                    <h4 style="font-size: 0.95rem; margin: 20px 0 12px; color: var(--text-muted); text-transform: uppercase;">
+                        2. Payment Method
+                    </h4>
+
+                    <div class="payment-selector">
+                        <div class="payment-opt-card active" data-pay="UPI" id="pay-opt-upi">
+                            <div class="payment-opt-icon">📱</div>
+                            <div class="payment-opt-title">UPI / QR Code</div>
+                            <div style="font-size: 0.75rem; color: #1b8a5a; font-weight: 600;">GPay, PhonePe, Paytm</div>
+                        </div>
+
+                        <div class="payment-opt-card" data-pay="COD" id="pay-opt-cod">
+                            <div class="payment-opt-icon">💵</div>
+                            <div class="payment-opt-title">Cash on Delivery</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Pay upon delivery</div>
+                        </div>
+                    </div>
+
+                    <!-- UPI Details View -->
+                    <div id="upi-details-wrap" class="upi-qr-card">
+                        <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-dark);">
+                            Scan & Pay directly to Panda Pooja Samagri
+                        </div>
+                        
+                        <!-- Simulated QR Code SVG -->
+                        <div class="upi-qr-mock">
+                            <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                <rect width="100" height="100" fill="#ffffff"/>
+                                <path d="M10 10h30v30h-30z M60 10h30v30h-30z M10 60h30v30h-30z" fill="#000000"/>
+                                <path d="M18 18h14v14h-14z M68 18h14v14h-14z M18 68h14v14h-14z" fill="#ffffff"/>
+                                <path d="M22 22h6v6h-6z M72 22h6v6h-6z M22 72h6v6h-6z" fill="#d9531e"/>
+                                <rect x="50" y="50" width="10" height="10" fill="#000000"/>
+                                <rect x="70" y="50" width="10" height="20" fill="#000000"/>
+                                <rect x="50" y="70" width="20" height="10" fill="#000000"/>
+                                <rect x="80" y="80" width="10" height="10" fill="#000000"/>
+                            </svg>
+                        </div>
+
+                        <div class="upi-id-badge">UPI ID: pandapooja@upi</div>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px;">
+                            Amount to Pay: <strong id="checkout-pay-amount" style="color: var(--primary);">₹0</strong>
+                        </p>
+                    </div>
+
+                    <!-- Order Confirmation Button -->
+                    <button type="submit" class="btn-checkout-now" id="btn-submit-order">
+                        🙏 Confirm & Place Order (Instant Vendor Alert)
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blessed Order Confirmation Receipt Modal -->
+    <div class="modal-overlay" id="order-success-modal">
+        <div class="modal-card" style="text-align: center; padding: 32px 24px;">
+            <div style="width: 70px; height: 70px; background: #eaf8f1; color: #1b8a5a; border-radius: 50%; font-size: 2.2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                ✓
+            </div>
+            <h2 style="font-size: 1.5rem; color: var(--text-main); margin-bottom: 6px;">Order Placed Successfully!</h2>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+                A live notification has been sent directly to the <strong>Panda Vendor Portal</strong>.
+            </p>
+
+            <div style="background: var(--surface-light); border: 1px dashed var(--gold); border-radius: var(--radius-md); padding: 18px; text-align: left; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="font-size: 0.82rem; color: var(--text-muted);">Order ID:</span>
+                    <strong id="receipt-order-id" style="font-family: monospace; color: var(--primary);">#PPS-000000</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="font-size: 0.82rem; color: var(--text-muted);">Customer:</span>
+                    <strong id="receipt-customer-name">Name</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="font-size: 0.82rem; color: var(--text-muted);">Total Amount:</span>
+                    <strong id="receipt-total-amount" style="color: var(--primary);">₹0</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="font-size: 0.82rem; color: var(--text-muted);">Payment:</span>
+                    <span id="receipt-payment-method">UPI</span>
+                </div>
+                <div style="border-top: 1px solid var(--border-light); padding-top: 8px; margin-top: 8px; font-size: 0.82rem; color: var(--text-muted);">
+                    📍 Delivery Address: <span id="receipt-address"></span>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <a id="btn-receipt-whatsapp" href="#" target="_blank" class="btn-cta-vendor" style="background: #25d366; box-shadow: none;">
+                    💬 Notify Seller on WhatsApp
+                </a>
+                <button id="btn-close-success" class="v-action-btn" style="padding: 10px 18px; font-size: 0.9rem;">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    <script src="store.js"></script>
+</body>
+</html>
